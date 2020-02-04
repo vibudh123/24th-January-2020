@@ -1,0 +1,20 @@
+import com.cg.eis.exception.MyEmployeeException;
+import java.util.*;
+class Salaryplay{
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter your salary : ");
+		int n1 = scan.nextInt();
+		try{
+			checkSal(n1);
+			System.out.print("Salary above 3000  : " + n1);
+		}catch(MyEmployeeException e){
+			System.out.print(e);
+		}
+	}
+	public static void checkSal(int n)throws MyEmployeeException{
+		if(n<=3000){
+			throw new MyEmployeeException("Salary should be above 3000");
+		}
+	}
+}
